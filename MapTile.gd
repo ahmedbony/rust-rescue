@@ -40,7 +40,7 @@ func download_map_tile() -> void:
 		#center_latitude, center_longitude, zoom, map_width, map_height, api_key
 	#]
 	
-	var url = "https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=%d&size=640x640&scale=2&key=%s" % [
+	var url = "https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=%d&size=640x640&scale=1&key=%s" % [
 		center_latitude, center_longitude, zoom, api_key
 	]
 	
