@@ -9,9 +9,28 @@ extends TextureRect
 @export var map_width: int = 1280  # Set the width of the map
 @export var map_height: int = 1280  # Set the height of the map
 
+var menu_instance
+
 
 func _ready() -> void:
+
+	show_menu()
 	download_map_tile()
+	
+func show_menu():
+	# Load and instance the menu scene
+	var menu_scene = load("res://menu.tscn")  # Replace with the actual path to your Menu scene
+	menu_instance = menu_scene.instantiate()  # Instantiate the scene
+	add_child(menu_instance)  # Add the menu to the scene
+
+# Optional: Handle toggling the menu with a key (e.g., "Escape" key)
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):  # Assuming "Esc" is mapped to ui_cancel
+		if menu_instance == null:
+			show_menu()  # Show the menu if it's not already on
+		else:
+			menu_instance.queue_free()  # Remove the menu
+			menu_instance = null
 
 func download_map_tile() -> void:
 	#var url = "https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=%d&size=640x640&key=%s" % [
