@@ -1,8 +1,8 @@
 # MapTile.gd
 extends TextureRect
 
-@export var api_key: String = "AIzaSyCWkRyynUhoA9BGFVcTf_D96QJ7WsQ0Lks"  # Replace with your actual API key
-@export var center_latitude: float = 32.27994043230601  # Default to San Francisco
+@export var api_key: String = "AIzaSyArALE1Gl8fh4h3-Yg-Z9onysLP1TJ7oko"  # Replace with your actual API key
+@export var center_latitude: float = 32.27994043230601  # Default to NM State
 @export var center_longitude: float = -106.75172853695162 
 @export var zoom: int = 15  # Zoom level
 
@@ -40,7 +40,7 @@ func download_map_tile() -> void:
 		#center_latitude, center_longitude, zoom, map_width, map_height, api_key
 	#]
 	
-	var url = "https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=%d&size=640x640&scale=1&key=%s" % [
+	var url = "https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&zoom=%d&size=640x640&scale=2&key=%s" % [
 		center_latitude, center_longitude, zoom, api_key
 	]
 	
