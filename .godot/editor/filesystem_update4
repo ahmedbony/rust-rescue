@@ -1,2 +1,4 @@
-res://menu.tscn
-res://game.tscn
+res://main.tscn
+res://Map/map_container.tscn
+res://Player/player.tscn
+res://Map/map_tile.tscn
